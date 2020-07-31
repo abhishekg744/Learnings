@@ -7,3 +7,4 @@ Asp.Net Core API project
 -DTO's (converting to models using Automapper)
 -AuthRepository(Login, Register) : (PasswordHashing Mechanism, fetching claims)
 -JWT Token Authentication
+-Serilog - file logger

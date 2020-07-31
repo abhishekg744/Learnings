@@ -17,9 +17,11 @@ namespace ApgCoreAPI.Controllers
     public class CharacterController: ControllerBase
     {
         private readonly ICharacterService _characterService;
+        private readonly ILogger _logger;
 
-        public CharacterController(ICharacterService characterService)
+        public CharacterController(ICharacterService characterService, ILogger<CharacterController> logger)
         {
+            _logger = logger;
             _characterService = characterService;
         }
         
@@ -27,6 +29,8 @@ namespace ApgCoreAPI.Controllers
         public async Task<IActionResult> Get() {
             // 1 of the advantage of ControllerBase - access claims directly through User objectt
             int userId = int.Parse(User.Claims.FirstOrDefault(claims=>claims.Type == ClaimTypes.NameIdentifier).Value);
+             _logger.LogInformation("Log message in Character get all API");
+            _logger.LogCritical("Log message in Character get all API");
             return Ok(await _characterService.GetAllCharacters());
         }
 
