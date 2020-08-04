@@ -1,0 +1,9 @@
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\bin\Debug\netstandard2.0\RabbitMQEventBus.deps.json
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\bin\Debug\netstandard2.0\RabbitMQEventBus.dll
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\obj\Debug\netstandard2.0\RabbitMQEventBus.csprojAssemblyReference.cache
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\obj\Debug\netstandard2.0\RabbitMQEventBus.AssemblyInfoInputs.cache
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\obj\Debug\netstandard2.0\RabbitMQEventBus.AssemblyInfo.cs
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\bin\Debug\netstandard2.0\RabbitMQEventBus.pdb
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\obj\Debug\netstandard2.0\RabbitMQEventBus.csproj.CoreCompileInputs.cache
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\obj\Debug\netstandard2.0\RabbitMQEventBus.dll
+D:\Projects\Udemy\Learnings\Common\RabbitMQEventBus\obj\Debug\netstandard2.0\RabbitMQEventBus.pdb

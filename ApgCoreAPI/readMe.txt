@@ -1,6 +1,7 @@
 Asp.Net Core API project
 
 -Contains API calls
+-SQL Server
 -Migrations
 -Entity Framework
 -Generic response object

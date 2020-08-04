@@ -17,6 +17,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using RabbitMQ.Client;
+using RabbitMQEventBus;
+using RabbitMQEventBus.Producer;
 
 namespace ApgCoreAPI
 {
@@ -49,6 +52,18 @@ namespace ApgCoreAPI
                 };
             });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor >();
+            services.AddSingleton<IRabbitMQConnection>(sp =>
+            {
+                var factory = new ConnectionFactory()
+                {
+                    HostName = Configuration["EventBus:HostName"]
+                };
+                factory.UserName = Configuration["EventBus:UserName"];
+                factory.Password = Configuration["EventBus:Password"];
+
+                return new RabbitMQConnection(factory);
+            });
+            services.AddSingleton<ProducerEventBus>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

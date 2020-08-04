@@ -1,0 +1,10 @@
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\bin\Debug\netcoreapp3.1\CatalogApi.exe
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\obj\Debug\netcoreapp3.1\CatalogApi.csprojAssemblyReference.cache
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\obj\Debug\netcoreapp3.1\CatalogApi.AssemblyInfoInputs.cache
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\obj\Debug\netcoreapp3.1\CatalogApi.AssemblyInfo.cs
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\obj\Debug\netcoreapp3.1\CatalogApi.RazorTargetAssemblyInfo.cache
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\obj\Debug\netcoreapp3.1\staticwebassets\CatalogApi.StaticWebAssets.Manifest.cache
+D:\Projects\Udemy\Learnings\Microservices Implementation\microservices\CatalogApi\CatalogApi\obj\Debug\netcoreapp3.1\staticwebassets\CatalogApi.StaticWebAssets.xml

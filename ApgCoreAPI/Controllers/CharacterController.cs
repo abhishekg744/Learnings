@@ -8,6 +8,10 @@ using ApgCoreAPI.Models;
 using ApgCoreAPI.Dtos.Character;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using RabbitMQEventBus.Event;
+using AutoMapper;
+using RabbitMQEventBus.Producer;
+using RabbitMQEventBus.Common;
 
 namespace ApgCoreAPI.Controllers
 {
@@ -18,10 +22,14 @@ namespace ApgCoreAPI.Controllers
     {
         private readonly ICharacterService _characterService;
         private readonly ILogger _logger;
+        private readonly IMapper _mapper;
+        private readonly ProducerEventBus _eventBus;
 
-        public CharacterController(ICharacterService characterService, ILogger<CharacterController> logger)
+        public CharacterController(ICharacterService characterService, ILogger<CharacterController> logger, IMapper mapper, ProducerEventBus eventBus)
         {
             _logger = logger;
+            _mapper = mapper;
+            _eventBus = eventBus;
             _characterService = characterService;
         }
         
@@ -61,6 +69,23 @@ namespace ApgCoreAPI.Controllers
             }
             return Ok(response);
         }
-        
+
+        [HttpPost("Publish")]
+        public async Task<IActionResult> Publish(PublishEvent data)
+        {
+            var eventMessage = _mapper.Map<TankMonitorProducerEvent>(data);
+            eventMessage.RequestId = Guid.NewGuid();
+            try
+            {
+                _eventBus.PublishTankMonitor(EventBusConstants.TankMonitorQueue, eventMessage);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+            return Accepted();
+        }
     }
 }
