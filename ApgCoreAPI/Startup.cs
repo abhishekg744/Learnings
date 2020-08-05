@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ApgCoreAPI.Data;
+using ApgCoreAPI.MiddleWareExtensions;
+using ApgCoreAPI.RabbitMQConsumer;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -64,6 +66,7 @@ namespace ApgCoreAPI
                 return new RabbitMQConnection(factory);
             });
             services.AddSingleton<ProducerEventBus>();
+            services.AddSingleton<ConsumerEventBus>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,6 +80,7 @@ namespace ApgCoreAPI
            // app.UseHttpsRedirection();
 
             app.UseRouting();
+            
             app.UseAuthentication();
 
             app.UseAuthorization();
@@ -85,6 +89,9 @@ namespace ApgCoreAPI
             {
                 endpoints.MapControllers();
             });
+            
+            app.UseRabbitListner();
+
             loggerFactory.AddFile("Logs/mylog-{Date}.txt");
         }
     }

@@ -71,7 +71,7 @@ namespace ApgCoreAPI.Controllers
         }
 
         [HttpPost("Publish")]
-        public async Task<IActionResult> Publish(PublishEvent data)
+        public async Task<IActionResult> Publish([FromBody] PublishEvent data)
         {
             var eventMessage = _mapper.Map<TankMonitorProducerEvent>(data);
             eventMessage.RequestId = Guid.NewGuid();

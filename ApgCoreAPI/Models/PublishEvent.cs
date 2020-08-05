@@ -7,6 +7,6 @@ namespace ApgCoreAPI.Models
 {
     public class PublishEvent
     {
-        string Name { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace ApgCoreAPI
             CreateMap<Character, GetCharacterDto>();
             CreateMap<AddCharacterDto, Character>();
             CreateMap<Character, AddCharacterDto>();
-            CreateMap<PublishEvent, TankMonitorProducerEvent>();
+            CreateMap<PublishEvent, TankMonitorProducerEvent>().ReverseMap();
 
         }
         
