@@ -1,6 +1,7 @@
 ﻿using ApgCoreAPI.Models;
 using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -22,10 +23,10 @@ namespace ApgCoreAPI.RabbitMQConsumer
         private readonly IMapper _mapper;
         //private readonly repository
 
-        public ConsumerEventBus(IRabbitMQConnection connection, IMapper mapper)
+        public ConsumerEventBus(IRabbitMQConnection connection, IMapper mapper, IMediator mediator)
         {
             _connection = connection;
-           // _mediator = mediator;
+            _mediator = mediator;
             _mapper = mapper;
         }
 
@@ -41,17 +42,27 @@ namespace ApgCoreAPI.RabbitMQConsumer
             channel.BasicConsume(queue: EventBusConstants.TankMonitorQueue, autoAck: true, consumer: consumer, noLocal: false, exclusive: false, arguments: null);
         }
 
-        private void RecievedEvent(object sender, BasicDeliverEventArgs e)
+        private async void RecievedEvent(object sender, BasicDeliverEventArgs e)
         {
-            Console.WriteLine("Recieved");
-            if (e.RoutingKey == EventBusConstants.TankMonitorQueue)
+            try
             {
-                var message = Encoding.UTF8.GetString(e.Body.Span);
-                var data = JsonConvert.DeserializeObject<TankMonitorProducerEvent>(message);
-                Console.WriteLine(data);
-                var command = _mapper.Map<PublishEvent>(data);
-                Console.WriteLine(data);
-                //var result = await _mediator.Send(command);
+                Console.WriteLine("Recieved");
+                if (e.RoutingKey == EventBusConstants.TankMonitorQueue)
+                {
+                    var message = Encoding.UTF8.GetString(e.Body.Span);
+                    var data = JsonConvert.DeserializeObject<TankMonitorProducerEvent>(message);
+                    Console.WriteLine(data);
+                    var command = _mapper.Map<PublishEvent>(data);
+                    Console.WriteLine(data);
+                    var result = await _mediator.Send(new TankMonitorHandlerModel
+                    {
+                        PublishedData = command
+                    });
+                }
+            }
+            catch(Exception ex)
+            {
+                throw;
             }
         }
 

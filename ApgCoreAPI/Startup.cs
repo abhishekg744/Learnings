@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using ApgCoreAPI.Data;
 using ApgCoreAPI.MiddleWareExtensions;
 using ApgCoreAPI.RabbitMQConsumer;
 using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -67,6 +69,7 @@ namespace ApgCoreAPI
             });
             services.AddSingleton<ProducerEventBus>();
             services.AddSingleton<ConsumerEventBus>();
+            services.AddMediatR(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
