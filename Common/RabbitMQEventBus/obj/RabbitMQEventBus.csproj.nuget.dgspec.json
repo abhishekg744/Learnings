@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Udemy\\Learnings\\Common\\RabbitMQEventBus\\RabbitMQEventBus.csproj": {}
+    "D:\\Learnings\\Common\\RabbitMQEventBus\\RabbitMQEventBus.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Udemy\\Learnings\\Common\\RabbitMQEventBus\\RabbitMQEventBus.csproj": {
+    "D:\\Learnings\\Common\\RabbitMQEventBus\\RabbitMQEventBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Udemy\\Learnings\\Common\\RabbitMQEventBus\\RabbitMQEventBus.csproj",
+        "projectUniqueName": "D:\\Learnings\\Common\\RabbitMQEventBus\\RabbitMQEventBus.csproj",
         "projectName": "RabbitMQEventBus",
-        "projectPath": "D:\\Projects\\Udemy\\Learnings\\Common\\RabbitMQEventBus\\RabbitMQEventBus.csproj",
-        "packagesPath": "C:\\Users\\Abhishek\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Udemy\\Learnings\\Common\\RabbitMQEventBus\\obj\\",
+        "projectPath": "D:\\Learnings\\Common\\RabbitMQEventBus\\RabbitMQEventBus.csproj",
+        "packagesPath": "C:\\Users\\Sasken Tech\\.nuget\\packages\\",
+        "outputPath": "D:\\Learnings\\Common\\RabbitMQEventBus\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Abhishek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sasken Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,7 +63,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

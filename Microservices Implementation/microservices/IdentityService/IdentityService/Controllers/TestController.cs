@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CatalogApi.Controllers
+namespace IdentityService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     [Authorize]
-    public class CatalogController : ControllerBase
+    public class TestController : ControllerBase
     {
 
         public string Get()
